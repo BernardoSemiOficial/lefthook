@@ -6,7 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "lefthook:commit-msg": "lefthook run commit-msg",
+    "lefthook:pre-commit": "lefthook run pre-commit",
+    "lefthook:pre-push": "lefthook run pre-push"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +29,8 @@
     "@angular-devkit/build-angular": "^18.0.2",
     "@angular/cli": "^18.0.2",
     "@angular/compiler-cli": "^18.0.0",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
@@ -33,6 +38,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "lefthook": "^1.7.11",
     "typescript": "~5.4.2"
   }
 }

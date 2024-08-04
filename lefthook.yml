@@ -1,0 +1,29 @@
+# Refer for explanation to following link:
+# https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md
+
+# Rodar script de correção de mensagens de commit
+commit-msg:
+  scripts:
+    "commitlint.sh":
+      runner: bash
+
+# Rodar script de correção de código
+pre-commit:
+  piped: true
+  commands:
+    build:
+      run: ng build
+    unit-test:
+      run: ng test
+
+# Rodar script de correção de código
+pre-push:
+  # Rodar somente em merges ou rebases
+  # E em branchs de feature
+  only:
+    - merge
+    - rebase
+    - ref: feature/*
+  commands:
+    build:
+      run: ng build
