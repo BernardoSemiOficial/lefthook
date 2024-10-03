@@ -20,12 +20,14 @@ Alterar um diretório para arquivos de script. O diretório para arquivos de scr
 
 Exemplo de árvore de diretórios:
 
+```
 .lefthook/
 ├── pre-commit/
-│ ├── lint.sh
-│ └── test.py
+│   ├── lint.sh
+│   └── test.py
 └── pre-push/
-└── check-files.rb
+    └── check-files.rb
+```
 
 ### parallel
 
@@ -51,6 +53,8 @@ Importante: O script deve existir na <source_dir>/<git-hook-name>/pasta. Veja so
 
 Estrutura correta das pastas:
 
+```
 .lefthook/
 └── pre-commit/
-└── lint.sh
+    └── lint.sh
+```
