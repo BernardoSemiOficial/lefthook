@@ -1,27 +1,56 @@
 # Lefthook
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.2.
+[Configuração do lefthook](https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md)
 
-## Development server
+### colors
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Padrão: auto
 
-## Code scaffolding
+Se habilitar ou desabilitar a saída colorida do Lefthook. Esta opção pode ser substituída por --colorsoption. Você também pode fornecer seus próprios códigos de cores.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### output
 
-## Build
+Você pode gerenciar a verbosidade usando a `output` configuração. Você pode especificar o que imprimir em sua saída definindo esses valores, que você precisa ter. Os valores possíveis são meta,summary,success,failure,execution,execution_out,execution_info,skips. Por padrão, todos os valores de saída são habilitados
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### source_dir
 
-## Running unit tests
+Padrão: .lefthook
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Alterar um diretório para arquivos de script. O diretório para arquivos de script contém pastas com nomes de hooks do git que contêm arquivos de script.
 
-## Running end-to-end tests
+Exemplo de árvore de diretórios:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+.lefthook/
+├── pre-commit/
+│ ├── lint.sh
+│ └── test.py
+└── pre-push/
+└── check-files.rb
 
-## Further help
+### parallel
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Padrão: false
+
+Observação: O Lefthook executa comandos e scripts sequencialmente por padrão.
+
+Execute comandos e scripts simultaneamente.
+
+### piped
+
+Padrão: false
+
+Observação: Lefthook retornará um erro se ambos piped: truee parallel: trueestiverem definidos.
+
+Pare de executar comandos e scripts se um deles falhar.
+
+# scripts
+
+Scripts a serem executados para o hook. Cada script tem um nome (nome do arquivo no diretório scripts) e opções de execução associadas .
+
+Importante: O script deve existir na <source_dir>/<git-hook-name>/pasta. Veja source_dir.
+
+Estrutura correta das pastas:
+
+.lefthook/
+└── pre-commit/
+└── lint.sh
