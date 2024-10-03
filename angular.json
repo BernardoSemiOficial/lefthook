@@ -74,8 +74,6 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "browsers": "ChromeHeadless",
-            "watch": false,
             "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
@@ -87,7 +85,17 @@
             ],
             "styles": ["src/styles.scss"],
             "scripts": []
-          }
+          },
+          "configurations": {
+            "local": {
+              "watch": true
+            },
+            "ci": {
+              "browsers": "ChromeHeadless",
+              "watch": false
+            }
+          },
+          "defaultConfiguration": "local"
         }
       }
     }
