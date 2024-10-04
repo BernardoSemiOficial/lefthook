@@ -11,8 +11,10 @@
 		"lefthook:commit-msg": "lefthook run commit-msg",
 		"lefthook:pre-commit": "lefthook run pre-commit",
 		"lefthook:pre-push": "lefthook run pre-push",
-		"lint": "@biomejs/biome lint",
-		"lint:write": "@biomejs/biome lint --write"
+		"lint": "npx @biomejs/biome lint ./src",
+		"lint:write": "npx @biomejs/biome lint --write ./src",
+		"format": "npx @biomejs/biome format ./src",
+		"format:write": "npx @biomejs/biome format --write ./src"
 	},
 	"private": true,
 	"dependencies": {
