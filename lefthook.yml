@@ -21,15 +21,17 @@ commit-msg:
 # Rodar script de correção de código
 pre-commit:
   piped: true
-  scripts:
-    "commitlint.sh":
-      runner: bash
-      priority: 1
   commands:
+    lint:
+      run: npx @biomejs/biome check --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
+      stage_fixed: true
+      priority: 1
     build:
       run: ng build
+      priority: 2
     unit-test:
       run: ng test --configuration=ci
+      priority: 3
 
 # Rodar script de correção de código
 pre-push:
@@ -40,5 +42,9 @@ pre-push:
     - rebase
     - ref: feature/*
   commands:
+    lint:
+      run: npx @biomejs/biome check --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
+      stage_fixed: true
+      priority: 1
     build:
       run: ng build
