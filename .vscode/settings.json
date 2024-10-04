@@ -4,5 +4,8 @@
   "editor.formatOnPaste": false,
   "[scss]": {
     "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   }
 }

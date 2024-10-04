@@ -1,6 +1,29 @@
 # Lefthook
 
+**Esse projeto frontend com Angular foi configurado com Lefthook para realizar tarefas de desenvolvimento nessas etapas:**
+
+### Ao escrever uma mensagem no código:
+- verificar se a mensagem se adequa ao padrão do commitlint.
+
+### Ao realizar um commit:
+- rodar lint para formatar e verificar código alterado;
+- rodar build;
+- rodar testes unitários.
+
+### Ao realizar um push:
+- rodar lint para formatar e verificar código alterado;
+- rodar build;
+
+### Arquivo lefthook
+
+O arquivo lefthook contém toda a configuração para todos os hooks do git rodarem determinados processos, como mensagem de commit, commit e push. O arquivo é `lefthook.yml`.
+
+### Arquivo BiomeJS
+
+O arquivo biome configura todas as formatações e linters que serão executados no projetos e para quais arquivos, seguindo padrãos definidos que podem ser modificação para uma grande possibilidade de linguagens.
+
 [Configuração do lefthook](https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md)
+[Configuração do biome](https://biomejs.dev/guides/configure-biome/)
 
 ### colors
 
