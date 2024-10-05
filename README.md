@@ -16,14 +16,19 @@
 
 ### Arquivo lefthook
 
-O arquivo lefthook contém toda a configuração para todos os hooks do git rodarem determinados processos, como mensagem de commit, commit e push. O arquivo é `lefthook.yml`.
+O arquivo lefthook contém toda a configuração para todos os hooks do git rodarem determinados processos, como mensagem de commit, commit e push. O arquivo é `lefthook.yml`. O Lefthook, ainda possui uma pasta para armazenar script que podem ser executados e é no diretório `.lefthook/`
 
 ### Arquivo BiomeJS
 
-O arquivo biome configura todas as formatações e linters que serão executados no projetos e para quais arquivos, seguindo padrãos definidos que podem ser modificação para uma grande possibilidade de linguagens.
+O arquivo biome configura todas as formatações e linters que serão executados no projetos e para quais arquivos, seguindo padrãos definidos que podem ser modificação para uma grande possibilidade de linguagens. O arquivo é `biome.json`.
 
-[Configuração do lefthook](https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md)
-[Configuração do biome](https://biomejs.dev/guides/configure-biome/)
+**[Configuração do lefthook](https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md)**
+
+**[Configuração do biome](https://biomejs.dev/guides/configure-biome/)**
+
+### Workspace Config
+
+O projeto foi configurado para ser executado em workspace do Visual Studio Code, ou seja, as configurações que um usuário tiver localmente serão sobreescritas para as configurados nesse repositório, isso tem como objetivo criar uma padronização de código no projeto, além de extensões utilizadas. O arquivo que defini esse workspace é o `settings.json` e o que defini as extensões padrões é `extensions.json`
 
 ### colors
 
